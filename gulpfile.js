@@ -15,8 +15,8 @@ gulp.task('copy:views', function () {
 
     console.log(chalk.magenta.bold('[copy:views]') + ' Copying views to dist');
 
-    return gulp.src('./dashboard/views/**/*.hbs', {base: './dashboard/views'})
-        .pipe(gulp.dest('./dashboard/dist/views/'));
+    return gulp.src('./views/**/*.hbs', {base: './views'})
+        .pipe(gulp.dest('./dist/views/'));
 
 });
 
@@ -24,18 +24,18 @@ gulp.task('html-replace', ['uglify', 'copy:views'], function() {
 
     console.log(chalk.magenta.bold('[html-replace]') + ' Replacing some HTML');
 
-    return gulp.src('dashboard/views/shared/_layout.hbs')
+    return gulp.src('views/shared/_layout.hbs')
         .pipe(htmlreplace({
             'js': 'js/scripts.min.js'
         }))
-        .pipe(gulp.dest('dashboard/dist/views/shared/'));
+        .pipe(gulp.dest('dist/views/shared/'));
 });
 
 gulp.task('lint', function() {
 
     console.log(chalk.magenta.bold('[lint]') + ' Linting JavaScript files');
 
-    return gulp.src(['./**/*.js', '!./**/*.min.js', '!./dashboard/static/components/**/*.js', '!./dashboard/static/js/vendor/**/*.js', '!./node_modules/**/*.js'])
+    return gulp.src(['./**/*.js', '!./**/*.min.js', '!./static/components/**/*.js', '!./static/js/vendor/**/*.js', '!./node_modules/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 
@@ -45,7 +45,7 @@ gulp.task('sass:dev', function () {
 
     console.log(chalk.magenta.bold('[sass]') + ' Compiling development CSS');
 
-    return gulp.src('dashboard/static/scss/*.scss')
+    return gulp.src('static/scss/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded',
@@ -63,7 +63,7 @@ gulp.task('sass:dev', function () {
         .pipe(autoprefixer({
             browsers: ['last 3 versions', 'ie 9']
         }))
-        .pipe(gulp.dest('./dashboard/static/css'))
+        .pipe(gulp.dest('./static/css'))
         .pipe(livereload());
 });
 
@@ -71,7 +71,7 @@ gulp.task('sass:prod', function () {
 
     console.log(chalk.magenta.bold('[sass]') + ' Compiling production CSS');
 
-    return gulp.src('dashboard/static/scss/*.scss')
+    return gulp.src('static/scss/*.scss')
 
         .pipe(sass({
             outputStyle: 'compressed',
@@ -88,18 +88,20 @@ gulp.task('sass:prod', function () {
             browsers: ['last 3 versions', 'ie 9']
         }))
 
-        .pipe(gulp.dest('./dashboard/static/css'));
+        .pipe(gulp.dest('./static/css'));
 });
+
 
 gulp.task('uglify', function() {
 
     console.log(chalk.magenta.bold('[uglify]') + ' Concatenating JavaScript files');
 
     return gulp.src([
-
+            './static/components/jquery/dist/jquery.min.js',
+            './static/js/dispatch.js',
         ])
         .pipe(uglify('scripts.min.js'))
-        .pipe(gulp.dest('./dashboard/static/js/'));
+        .pipe(gulp.dest('./static/js/'));
 });
 
 // Watch files for changes
@@ -108,9 +110,9 @@ gulp.task('watch', function () {
     console.log(chalk.magenta.bold('[watch]') + ' Watching Sass files for changes');
 
     livereload.listen();
-    gulp.watch(['dashboard/static/scss/**/*.scss'], ['sass:dev']);
-    gulp.watch(['./**/*.js', '!./dashboard/static/components/**/*.js', '!./dashboard/static/js/vendor/**/*.js', '!./node_modules/**/*.js'], ['lint']);
-    gulp.watch(['./dashboard/views/**/*.hbs'], ['copy:views']);
+    gulp.watch(['static/scss/**/*.scss'], ['sass:dev']);
+    gulp.watch(['./**/*.js', '!./static/components/**/*.js', '!./static/js/vendor/**/*.js', '!./node_modules/**/*.js'], ['lint']);
+    gulp.watch(['./views/**/*.hbs'], ['copy:views']);
 
 });
 
