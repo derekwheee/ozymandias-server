@@ -1,3 +1,9 @@
-body {
-    font-family: arial;
-}
+// Sass
+@import 'sass/variables';
+
+// Global
+@import 'global/layout';
+@import 'global/type';
+
+//Organisms
+@import 'organisms/header';

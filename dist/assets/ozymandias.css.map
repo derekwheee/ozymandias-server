@@ -2,11 +2,19 @@
 	"version": 3,
 	"file": "ozymandias.css",
 	"sources": [
-		"../../sass_compiler-input_base_path-SUBV7zNr.tmp/0/app/styles/app.scss"
+		"../../sass_compiler-input_base_path-DLgqpKhO.tmp/0/app/styles/app.scss",
+		"../../sass_compiler-input_base_path-DLgqpKhO.tmp/0/app/styles/sass/_variables.scss",
+		"../../sass_compiler-input_base_path-DLgqpKhO.tmp/0/app/styles/global/_layout.scss",
+		"../../sass_compiler-input_base_path-DLgqpKhO.tmp/0/app/styles/global/_type.scss",
+		"../../sass_compiler-input_base_path-DLgqpKhO.tmp/0/app/styles/organisms/_header.scss"
 	],
 	"sourcesContent": [
-		"body {\n    font-family: arial;\n}\n"
+		"// Sass\n@import 'sass/variables';\n\n// Global\n@import 'global/layout';\n@import 'global/type';\n\n//Organisms\n@import 'organisms/header';\n",
+		"// COLORS\n$color-primary-black: #50514F;\n$color-primary-red: #F25F5C;\n$color-primary-yellow: #FFE066;\n$color-primary-blue: #247BA0;\n$color-primary-green: #70C1B3;\n\n// FONTS\n$font-base: \"franklin-gothic-urw\", sans-serif;\n$font-heading: \"alternate-gothic-no-1-d\", sans-serif;\n",
+		"html,\nbody {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: $font-base;\n    font-size: 1em;\n    color: $color-primary-black;\n}\n\nmain {\n    max-width: 50em;\n    margin: 0 auto 2em;\n    padding: 3em 0;\n    border-top: 0.25em solid $color-primary-yellow;\n}\n",
+		"a {\n    text-decoration: none;\n    color: $color-primary-red;\n\n    &:hover,\n    &:focus {\n        text-decoration: underline;\n    }\n}\n\nh1,\nh2,\nh3,\nh4 {\n    margin: 0;\n    line-height: 1;\n    font-family: $font-heading;\n    text-transform: uppercase;\n}\n\nh1 {\n    font-size: 5em;\n\n    a {\n        color: inherit;\n\n        &:hover,\n        &:focus {\n            text-decoration: none;\n            opacity: 0.7;\n        }\n    }\n}\n\nh2 {\n    font-size: 3em;\n}\n",
+		"header {\n    margin-bottom: 4em;\n    padding: 1em 1em 0;\n    background: $color-primary-red;\n\n    h1 {\n        font-size: 10em;\n        line-height: 1;\n        text-align: center;\n        color: white;\n    }\n}\n"
 	],
-	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,KAAM,GACtB",
+	"mappings": "AEAA,AAAA,IAAI;AACJ,AAAA,IAAI,CAAC;EACD,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,CAAE;EACV,OAAO,EAAE,CAAE,GACd;;AAED,AAAA,IAAI,CAAC;EACD,WAAW,EDAH,qBAAqB,EAAE,UAAU;ECCzC,SAAS,EAAE,GAAI;EACf,KAAK,EDTa,OAAO,GCU5B;;AAED,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,IAAK;EAChB,MAAM,EAAE,UAAW;EACnB,OAAO,EAAE,KAAM;EACf,UAAU,EAAE,MAAM,CAAC,KAAK,CDdL,OAAO,GCe7B;;AClBD,AAAA,CAAC,CAAC;EACE,eAAe,EAAE,IAAK;EACtB,KAAK,EFAW,OAAO,GEM1B;EARD,AAAA,CAAC,AAII,MAAM,EAJX,AAAA,CAAC,AAKI,MAAM,CAAC;IACJ,eAAe,EAAE,SAAU,GAC9B;;AAGL,AAAA,EAAE;AACF,AAAA,EAAE;AACF,AAAA,EAAE;AACF,AAAA,EAAE,CAAC;EACC,MAAM,EAAE,CAAE;EACV,WAAW,EAAE,CAAE;EACf,WAAW,EFPA,yBAAyB,EAAE,UAAU;EEQhD,cAAc,EAAE,SAAU,GAC7B;;AAED,AAAA,EAAE,CAAC;EACC,SAAS,EAAE,GAAI,GAWlB;EAZD,AAGI,EAHF,CAGE,CAAC,CAAC;IACE,KAAK,EAAE,OAAQ,GAOlB;IAXL,AAGI,EAHF,CAGE,CAAC,AAGI,MAAM,EANf,AAGI,EAHF,CAGE,CAAC,AAII,MAAM,CAAC;MACJ,eAAe,EAAE,IAAK;MACtB,OAAO,EAAE,GAAI,GAChB;;AAIT,AAAA,EAAE,CAAC;EACC,SAAS,EAAE,GAAI,GAClB;;ACpCD,AAAA,MAAM,CAAC;EACH,aAAa,EAAE,GAAI;EACnB,OAAO,EAAE,SAAU;EACnB,UAAU,EHDM,OAAO,GGS1B;EAXD,AAKI,MALE,CAKF,EAAE,CAAC;IACC,SAAS,EAAE,IAAK;IAChB,WAAW,EAAE,CAAE;IACf,UAAU,EAAE,MAAO;IACnB,KAAK,EAAE,KAAM,GAChB",
 	"names": []
 }
