@@ -1,1 +1,3 @@
-# ozymandias-server
+# OZYMANDIAS
+
+Ember edition.

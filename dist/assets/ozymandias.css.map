@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "ozymandias.css",
+	"sources": [
+		"../../sass_compiler-input_base_path-SUBV7zNr.tmp/0/app/styles/app.scss"
+	],
+	"sourcesContent": [
+		"body {\n    font-family: arial;\n}\n"
+	],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,KAAM,GACtB",
+	"names": []
+}
