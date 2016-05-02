@@ -27,3 +27,7 @@ build/Release
 node_modules
 
 static/components
+
+bower_components
+
+tmp

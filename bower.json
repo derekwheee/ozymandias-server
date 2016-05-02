@@ -1,24 +1,10 @@
 {
-  "name": "ozymandias-server",
-  "main": "index.js",
-  "version": "0.0.1",
-  "homepage": "https://github.com/frxnz/ozymandias-server",
-  "authors": [
-    "Derek Wheelden <derek.wheelden@gmail.com>"
-  ],
-  "moduleType": [
-    "node"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "name": "ozymandias",
   "dependencies": {
-    "jquery": "~2.1.4",
-    "modernizr": "~2.8.3"
+    "ember": "~2.5.0",
+    "ember-cli-shims": "0.1.1",
+    "ember-cli-test-loader": "0.2.2",
+    "ember-qunit-notifications": "0.1.0",
+    "Chart.js": "~2.0.2"
   }
 }

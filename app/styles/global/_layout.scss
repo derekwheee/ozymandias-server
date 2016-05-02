@@ -1,0 +1,19 @@
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-base;
+    font-size: 1em;
+    color: $color-primary-black;
+}
+
+main {
+    max-width: 50em;
+    margin: 0 auto 2em;
+    padding: 3em 0;
+    border-top: 0.25em solid $color-primary-yellow;
+}
